@@ -1,0 +1,6 @@
+tuple_location: '"pull_request"(.*)</a>'
+link_location: 'href="(.*)"'
+name_location: '">(.*)'
+pages: '?page='
+empty_page: 'any open pull requests.'
+report_location: 'reports/github_report.yaml'
