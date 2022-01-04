@@ -80,6 +80,6 @@ if __name__ == '__main__':
 
 		if(len(diff)!=0):
 			print(diff)
-			# message_list=format_message(diff)
-			# telegram_send.send(messages=message_list)
+			message_list=format_message(diff)
+			telegram_send.send(messages=message_list)
 			write_yaml(report_location,current_record)
