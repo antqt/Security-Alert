@@ -1,0 +1,6 @@
+tuple_location: '<td><a(.*)</a>'
+link_location: 'href="(.*)"'
+name_location: '">(.*)'
+pages: ''
+empty_page: ''
+report_location: 'reports/wordpress_report.yaml'

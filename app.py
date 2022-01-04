@@ -5,9 +5,10 @@ import yaml
 
 
 
-
-# url= 'https://github.com/NotCl0ne/school-project/pulls'
-url='https://github.com/projectdiscovery/nuclei-templates/pulls'
+def load_urls(links_path):
+	with open(links_path) as f:
+		data = yaml.load(f,Loader=yaml.FullLoader)
+	return data
 
 def load_config(yaml_path):
 	with open(yaml_path) as f:
@@ -23,7 +24,7 @@ def load_config(yaml_path):
 	return tuple_location,link_location,name_location,pages,empty_page,report_location
 
 
-def get_current_record(tuple_location,link_location,name_location,pages,empty_page):
+def get_current_record(tuple_location,link_location,name_location,pages,empty_page,url):
 	page=1
 	all_res=''
 
@@ -35,7 +36,7 @@ def get_current_record(tuple_location,link_location,name_location,pages,empty_pa
 			all_res+=res.text
 			page+=1
 	else:
-		all_res=requests.get(url)
+		all_res=requests.get(url).text
 
 	all_tuples=re.findall(tuple_location,all_res)
 
@@ -62,16 +63,23 @@ def write_yaml(destination,content):
 	with open(destination, 'w') as file:
 		documents = yaml.dump(content, file)
 
+def format_message(dictionary):
+	message_list=[]
+	for element in dictionary:
+		message="New update at {}\n\n[+]: {}".format(dictionary[element],element)
+		message_list.append(message)
+	return message_list
+
 if __name__ == '__main__':
-	
-	tuple_location,link_location,name_location,pages,empty_page,report_location=load_config('github.yaml')
-	
-	old_record=get_old_record(report_location)
-	
-	current_record=get_current_record(tuple_location,link_location,name_location,pages,empty_page)
+	urls = load_urls('links.yaml')
+	for url in urls:
+		tuple_location,link_location,name_location,pages,empty_page,report_location=load_config(urls[url])	
+		old_record=get_old_record(report_location)
+		current_record=get_current_record(tuple_location,link_location,name_location,pages,empty_page,url)
+		diff = { index : current_record[index] for index in set(current_record) - set(old_record) }
 
-	diff = { index : current_record[index] for index in set(current_record) - set(old_record) }
-
-	if(len(diff)!=0):
-		telegram_send.send(messages=diff)
-		write_yaml(report_location,current_record)
+		if(len(diff)!=0):
+			print(diff)
+			# message_list=format_message(diff)
+			# telegram_send.send(messages=message_list)
+			write_yaml(report_location,current_record)
