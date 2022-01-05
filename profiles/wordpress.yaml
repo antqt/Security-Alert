@@ -1,3 +1,4 @@
+host: 'https://wordpress.com'
 tuple_location: '<td><a(.*)</a>'
 link_location: 'href="(.*)"'
 name_location: '">(.*)'

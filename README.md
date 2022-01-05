@@ -30,6 +30,7 @@ This bot will notify the new update of the URL on telegram.
 - Create the configuration file for the URL with the format:
 
 ```yaml
+host: {The domain of the url}
 tuple_location: {The head and tail the tuple}
 link_location: {The location of the token to locate the link inside the tuple}
 name_location: {The location of the token to locate the name inside the tuple}
@@ -41,6 +42,7 @@ report_location: {the location to save the record}
 For example `github.yaml`:
 
 ```yaml
+host: 'https://github.com' #the url
 tuple_location: '"pull_request"(.*)</a>' #Between red boxs
 link_location: 'href="(.*)"' #Between yellow boxs
 name_location: '">(.*)' #Between green boxs

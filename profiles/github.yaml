@@ -1,3 +1,4 @@
+host: 'https://github.com'
 tuple_location: '"pull_request"(.*)</a>'
 link_location: 'href="(.*)"'
 name_location: '">(.*)'

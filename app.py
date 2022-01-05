@@ -13,6 +13,7 @@ def load_urls(links_path):
 def load_config(yaml_path):
 	with open(yaml_path) as f:
 		config = yaml.load(f,Loader=yaml.FullLoader)
+		host=config['host']
 		tuple_location=config['tuple_location']
 		link_location=config['link_location']
 		name_location=config['name_location']
@@ -21,7 +22,7 @@ def load_config(yaml_path):
 		empty_page=config['empty_page']
 
 		report_location=config['report_location']
-	return tuple_location,link_location,name_location,pages,empty_page,report_location
+	return host,tuple_location,link_location,name_location,pages,empty_page,report_location
 
 
 def get_current_record(tuple_location,link_location,name_location,pages,empty_page,url):
@@ -63,23 +64,25 @@ def write_yaml(destination,content):
 	with open(destination, 'w') as file:
 		documents = yaml.dump(content, file)
 
-def format_message(dictionary):
+def format_message(host,dictionary):
 	message_list=[]
 	for element in dictionary:
-		message="New update at {}\n\n[+]: {}".format(dictionary[element],element)
+		link = dictionary[element] if 'https://' in dictionary[element] else host+dictionary[element]
+		message="New update at {}\n\n[+]: {}".format(link,element)
 		message_list.append(message)
 	return message_list
 
 if __name__ == '__main__':
-	urls = load_urls('links.yaml')
+	urls = load_urls('resources/links.yaml')
 	for url in urls:
-		tuple_location,link_location,name_location,pages,empty_page,report_location=load_config(urls[url])	
+		host,tuple_location,link_location,name_location,pages,empty_page,report_location=load_config(urls[url])	
 		old_record=get_old_record(report_location)
 		current_record=get_current_record(tuple_location,link_location,name_location,pages,empty_page,url)
 		diff = { index : current_record[index] for index in set(current_record) - set(old_record) }
 
 		if(len(diff)!=0):
-			print(diff)
-			message_list=format_message(diff)
-			telegram_send.send(messages=message_list)
-			write_yaml(report_location,current_record)
+			message_list=format_message(host,diff)
+			print(message_list)
+
+			# telegram_send.send(messages=message_list)
+			# write_yaml(report_location,current_record)

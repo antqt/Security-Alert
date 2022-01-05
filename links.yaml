@@ -1,3 +1,0 @@
-#links : profile
-'https://github.com/projectdiscovery/nuclei-templates/pulls' : 'github.yaml'
-'https://wordpress.org/news/category/security/' : 'wordpress.yaml'
