@@ -1,7 +1,9 @@
 host: 'https://wordpress.com'
 tuple_location: '<td><a(.*)</a>'
-link_location: 'href="(.*)"'
-name_location: '">(.*)'
+data_location:
+  name_location: '">(.*)'
+  link_location: 'href="(.*)"'
 pages: ''
 empty_page: ''
 report_location: 'reports/wordpress_report.yaml'
+api_link: ''

@@ -1,0 +1,58 @@
+CVE-2020-10770:
+- ''
+- A flaw was found in Keycloak before 13.0.0, where it is possible to force the server
+  to call out an unverified URL using the OIDC parameter request_uri. This flaw allows
+  an attacker to use this parameter to execute a Server-side request forgery (SSRF)
+  attack.
+- 5.3
+CVE-2021-3654:
+- ''
+- Pending
+- Pending
+CVE-2021-43798:
+- ''
+- 'Grafana is an open-source platform for monitoring and observability. Grafana versions
+  8.0.0-beta1 through 8.3.0 (except for patched versions) iss vulnerable to directory
+  traversal, allowing access to local files. The vulnerable URL path is: `<grafana_host_url>/public/plugins//`,
+  where is the plugin ID for any installed plugin. At no time has Grafana Cloud been
+  vulnerable. Users are advised to upgrade to patched versions 8.0.7, 8.1.8, 8.2.7,
+  or 8.3.1. The GitHub Security Advisory contains more information about vulnerable
+  URL paths, mitigation, and the disclosure timeline.'
+- 7.5
+CVE-2022-0435:
+- ''
+- Pending
+- Pending
+CVE-2022-20699:
+- ''
+- 'Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345
+  Series Routers could allow an attacker to do any of the following: Execute arbitrary
+  code Elevate privileges Execute arbitrary commands Bypass authentication and authorization
+  protections Fetch and run unsigned software Cause denial of service (DoS) For more
+  information about these vulnerabilities, see the Details section of this advisory.'
+- Pending
+CVE-2022-22620:
+- ''
+- Pending
+- Pending
+CVE-2022-23772:
+- ''
+- Rat.SetString in math/big in Go before 1.16.14 and 1.17.x before 1.17.7 has an overflow
+  that can lead to Uncontrolled Memory Consumption.
+- Pending
+CVE-2022-23773:
+- ''
+- cmd/go in Go before 1.16.14 and 1.17.x before 1.17.7 can misinterpret branch names
+  that falsely appear to be version tags. This can lead to incorrect access control
+  if an actor is supposed to be able to create branches but not tags.
+- Pending
+CVE-2022-23806:
+- ''
+- Curve.IsOnCurve in crypto/elliptic in Go before 1.16.14 and 1.17.x before 1.17.7
+  can incorrectly return true in situations with a big.Int value that is not a valid
+  field element.
+- Pending
+CVE-2022-23998:
+- ''
+- Pending
+- Pending

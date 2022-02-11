@@ -1,0 +1,11 @@
+host: 'https://cvetrends.com'
+tuple_location: 'data'
+data_location:
+  name_location: 'cve'
+  link_location: ''
+  description: 'description'
+  score: 'cvssv3_base_score'
+pages: ''
+empty_page: ''
+report_location: 'reports/cvetrends_report.yaml'
+api_link: 'https://cvetrends.com/api/cves/24hrs'

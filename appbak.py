@@ -1,11 +1,10 @@
-#!/usr/bin/python3
 import telegram_send
 import requests
 import re
 import yaml
 
 
-os.chdir('/home/antqt/Security-Alert/')
+
 def load_urls(links_path):
 	with open(links_path) as f:
 		data = yaml.load(f,Loader=yaml.FullLoader)
@@ -16,19 +15,20 @@ def load_config(yaml_path):
 		config = yaml.load(f,Loader=yaml.FullLoader)
 		host=config['host']
 		tuple_location=config['tuple_location']
-
-		data_location=config['data_location']
+		link_location=config['link_location']
+		name_location=config['name_location']
 		
 		pages=config['pages']
 		empty_page=config['empty_page']
 
 		report_location=config['report_location']
 		api_link=config['api_link']
+		description=config['description']
 
-	return host,tuple_location,data_location,pages,empty_page,report_location,api_link
+	return host,tuple_location,link_location,name_location,pages,empty_page,report_location,api_link,description
 
 
-def get_current_record(tuple_location,data_location,pages,empty_page,url,api_link):
+def get_current_record(tuple_location,link_location,name_location,pages,empty_page,url,api_link,description):
 	page=1
 	all_res=''
 	records={}
@@ -49,27 +49,19 @@ def get_current_record(tuple_location,data_location,pages,empty_page,url,api_lin
 
 
 		for _tuple in all_tuples:
-			data=[]
-			data_on_1_line={}
-			for _data_location in data_location:
-				data.append(re.findall(data_location[_data_location],_tuple)[0])
-			data_on_1_line[data[0]]=data[1:]
-			records.update(data_on_1_line)
-			
-				
+			link=re.findall(link_location,_tuple)
+			name=re.findall(name_location,_tuple)
+			records.update(dict(zip(name,link)))
 	else:
 		all_res = session.get(api_link).json()
 		all_tuples=all_res[tuple_location]
 
+
 		for _tuple in all_tuples:
-			data_list=[]
-			data_on_1_line={}
-			for _data_location in data_location:
-				data_element ="" if data_location[_data_location] == "" else _tuple[data_location[_data_location]]
-				data= "Pending" if data_element == None else data_element
-				data_list.append(data)
-			data_on_1_line[data_list[0]]=data_list[1:]
-			records.update(data_on_1_line)
+			_description=_tuple[description]
+			if(_description==None): _description="Pending..."
+			name=_tuple[name_location]
+			records[name]=_description
 
 	return records
 
@@ -90,10 +82,8 @@ def write_yaml(destination,content):
 def format_message(host,dictionary):
 	message_list=[]
 	for element in dictionary:
-		link = dictionary[element][0] if 'https://' in dictionary[element][0] else host+dictionary[element][0]
-		message="New update at {}\n\n[+]: {}".format(link,element)
-		for _element in dictionary[element][1:]:
-			message+='\n\n[+]: {}'.format(_element)
+		link = dictionary[element] if 'https://' in dictionary[element] else host+dictionary[element]
+		message="New update at {}\n\n[+]: {}\n\n[+]: {}".format(link,element)
 		message_list.append(message)
 	return message_list
 	
@@ -101,14 +91,12 @@ def format_message(host,dictionary):
 if __name__ == '__main__':
 	urls = load_urls('resources/links.yaml')
 	for url in urls:
-		host,tuple_location,data_location,pages,empty_page,report_location,api_link=load_config(urls[url])	
+		host,tuple_location,link_location,name_location,pages,empty_page,report_location,api_link,description=load_config(urls[url])	
 		old_record=get_old_record(report_location)
-		current_record=get_current_record(tuple_location,data_location,pages,empty_page,url,api_link)
+		current_record=get_current_record(tuple_location,link_location,name_location,pages,empty_page,url,api_link,description)
 		diff = { index : current_record[index] for index in set(current_record) - set(old_record) }
 
 		if(len(diff)!=0):
 			message_list=format_message(host,diff)
 			telegram_send.send(messages=message_list)
 			write_yaml(report_location,current_record)
-
-	print("--- %s seconds ---" % (time.time() - start_time))
