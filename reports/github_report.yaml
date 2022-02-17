@@ -1,26 +1,106 @@
-A:
+Add CVE-2017-3599:
+- /projectdiscovery/nuclei-templates/pull/1056
+Add CVE-2020-7200:
 - /projectdiscovery/nuclei-templates/pull/1004
-C:
+Add CVE-2021-34991:
+- /projectdiscovery/nuclei-templates/pull/3152
+Add GraphQL Introspection Detection:
+- /projectdiscovery/nuclei-templates/pull/2793
+Add Micro Focus Operation Bridge Reporter (OBR) (CVE-2021-22502):
+- /projectdiscovery/nuclei-templates/pull/1008
+'Add Tenable Advisory ID:  TRA-2021-51':
+- /projectdiscovery/nuclei-templates/pull/3414
+Added CVE-2017-9248 Template:
+- /projectdiscovery/nuclei-templates/pull/3200
+Added CVE-2020-11420:
+- /projectdiscovery/nuclei-templates/pull/2567
+Added CVE-2020-1147:
+- /projectdiscovery/nuclei-templates/pull/1340
+Added CVE-2020-13258:
+- /projectdiscovery/nuclei-templates/pull/3496
+Added CVE-2021-24370:
+- /projectdiscovery/nuclei-templates/pull/2811
+Added CVE-2021-41163 (Discourse SNS webhook RCE):
+- /projectdiscovery/nuclei-templates/pull/3006
+Added CVE-2022-21371:
+- /projectdiscovery/nuclei-templates/pull/3625
+Added Cookie extractor:
+- /projectdiscovery/nuclei-templates/pull/3058
+Added DMARC Templates:
+- /projectdiscovery/nuclei-templates/pull/3261
+Added Jexboss Backdoor Webshell:
+- /projectdiscovery/nuclei-templates/pull/3263
+Added K8S info scan templates:
+- /projectdiscovery/nuclei-templates/pull/3160
+Adding CVE-2021-28480.yaml:
+- /projectdiscovery/nuclei-templates/pull/1330
+Apache Struts2 Log4j JNDI RCE:
+- /projectdiscovery/nuclei-templates/pull/3359
+CNVD-2021-95914:
+- /projectdiscovery/nuclei-templates/pull/3337
+CVE 2020 11420 - Final working update:
+- /projectdiscovery/nuclei-templates/pull/2603
+CVE-2021-3110 Blind Sqli:
 - /projectdiscovery/nuclei-templates/pull/885
-F:
+Create CVE-2013-0632.yaml:
+- /projectdiscovery/nuclei-templates/pull/2124
+Create CVE-2017-12636.yaml:
+- /projectdiscovery/nuclei-templates/pull/3524
+Create CVE-2017-5645.yaml:
+- /projectdiscovery/nuclei-templates/pull/3526
+Create CVE-2017-7504.yaml:
+- /projectdiscovery/nuclei-templates/pull/3525
+Create CVE-2020-13121.yaml:
+- /projectdiscovery/nuclei-templates/pull/3684
+Create CVE-2020-14750.yaml:
+- /projectdiscovery/nuclei-templates/pull/1345
+Create CVE-2021-21980.yaml:
+- /projectdiscovery/nuclei-templates/pull/3242
+Create CVE-2021-24507.yaml:
+- /projectdiscovery/nuclei-templates/pull/2498
+Create CVE-2021-43136.yaml:
+- /projectdiscovery/nuclei-templates/pull/3322
+Create CVE-2021-44077.yaml:
+- /projectdiscovery/nuclei-templates/pull/3317
+Create CVE-2022-0277:
+- /projectdiscovery/nuclei-templates/pull/3671
+Create CVE-2022-0437:
+- /projectdiscovery/nuclei-templates/pull/3673
+Create CVE-2022-21661.yaml:
+- /projectdiscovery/nuclei-templates/pull/3539
+Create desktop-ini-exposure.yaml:
+- /projectdiscovery/nuclei-templates/pull/3104
+Create graphql-detect:
+- /projectdiscovery/nuclei-templates/pull/2563
+'Create nsicg-default-password ':
+- /projectdiscovery/nuclei-templates/pull/1388
+Create seeyon-unauth:
+- /projectdiscovery/nuclei-templates/pull/1271
+Create weiphp-sql-injection:
+- /projectdiscovery/nuclei-templates/pull/941
+Fix CVE-2021-22986.yaml:
 - /projectdiscovery/nuclei-templates/pull/2817
-M:
+Moving  Can I Take Over DNS - Fingerprint to Draft:
 - /projectdiscovery/nuclei-templates/pull/3493
-N:
+New workflow - 403-bypass.yaml:
 - /projectdiscovery/nuclei-templates/pull/688
-T:
+Templates for detecting common Microsoft services:
 - /projectdiscovery/nuclei-templates/pull/2356
-U:
+Update CVE-2010-1870:
+- /projectdiscovery/nuclei-templates/pull/3111
+Update CVE-2017-10271.yaml:
+- /projectdiscovery/nuclei-templates/pull/3468
+Update twitter-secret.yaml:
 - /projectdiscovery/nuclei-templates/pull/2364
-'[':
+'[WIP] Iterate endpoints from robots.txt':
 - /projectdiscovery/nuclei-templates/pull/471
-a:
+'add : SqL Injection In gorm':
 - /projectdiscovery/nuclei-templates/pull/2466
-c:
+checks for github and gitlab recovery codes and discord backup codes:
 - /projectdiscovery/nuclei-templates/pull/3124
-g:
+gitlab, github &amp; discord file templates:
 - /projectdiscovery/nuclei-templates/pull/3125
-n:
+nuclei templates by geeknik:
 - /projectdiscovery/nuclei-templates/pull/2378
-u:
+updated severity:
 - /projectdiscovery/nuclei-templates/pull/2838

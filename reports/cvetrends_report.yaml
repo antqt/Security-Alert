@@ -68,18 +68,32 @@ CVE-2021-44521:
   as unsafe, and will continue to be considered unsafe after this CVE.'
 - []
 - Pending
-CVE-2021-46388:
-- ''
-- WAGO 750-8212 PFC200 G2 2ETH RS Firmware version 03.05.10(17) is affected by a privilege
-  escalation vulnerability. Improper handling of user cookies leads to escalating
-  privileges to administrative account of the router.
-- []
-- Pending
 CVE-2022-0609:
 - ''
 - Pending
 - []
 - Pending
+CVE-2022-22536:
+- ''
+- SAP NetWeaver Application Server ABAP, SAP NetWeaver Application Server Java, ABAP
+  Platform, SAP Content Server 7.53 and SAP Web Dispatcher are vulnerable for request
+  smuggling and request concatenation. An unauthenticated attacker can prepend a victim's
+  request with arbitrary data. This way, the attacker can execute functions impersonating
+  the victim or poison intermediary Web caches. A successful attack could result in
+  complete compromise of Confidentiality, Integrity and Availability of the system.
+- - products:
+    - product: Web Dispatcher
+      versions:
+      - 7.22ext
+      - '7.49'
+      - '7.53'
+      - '7.77'
+      - '7.81'
+      - '7.85'
+      - '7.86'
+      - '7.87'
+    vendor: Sap
+- 10.0
 CVE-2022-22945:
 - ''
 - VMware NSX Edge contains a CLI shell injection vulnerability. A malicious actor

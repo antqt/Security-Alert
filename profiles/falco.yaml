@@ -1,8 +1,8 @@
 host: 'https://github.com'
 tuple_location: 'class="Link--primary text-bold js-navigation-open markdown-title"(.+?)</a>'
 data_location:
-  name_location: '">(.+?)'
-  link_location: 'href="(.+?)"'
+  name_location: '">(.*)'
+  link_location: 'href="(.*)"'
 pages: ''
 empty_page: ''
 report_location: 'reports/falco.yaml'
