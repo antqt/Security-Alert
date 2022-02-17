@@ -4,6 +4,7 @@ data_location:
   name_location: 'cve'
   link_location: ''
   description: 'description'
+  service: 'vendors'
   score: 'cvssv3_base_score'
 pages: ''
 empty_page: ''

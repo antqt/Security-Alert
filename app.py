@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-import telegram_send
+# import telegram_send
 import requests
 import re
 import yaml
+#import os
 
-
-os.chdir('/home/antqt/Security-Alert/')
+#os.chdir('/home/antqt/Security-Alert/')
 def load_urls(links_path):
 	with open(links_path) as f:
 		data = yaml.load(f,Loader=yaml.FullLoader)
@@ -108,7 +108,6 @@ if __name__ == '__main__':
 
 		if(len(diff)!=0):
 			message_list=format_message(host,diff)
-			telegram_send.send(messages=message_list)
+			# telegram_send.send(messages=message_list)
 			write_yaml(report_location,current_record)
 
-	print("--- %s seconds ---" % (time.time() - start_time))

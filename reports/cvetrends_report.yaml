@@ -1,58 +1,89 @@
-CVE-2020-10770:
+CVE-2021-22040:
 - ''
-- A flaw was found in Keycloak before 13.0.0, where it is possible to force the server
-  to call out an unverified URL using the OIDC parameter request_uri. This flaw allows
-  an attacker to use this parameter to execute a Server-side request forgery (SSRF)
-  attack.
-- 5.3
-CVE-2021-3654:
+- VMware ESXi, Workstation, and Fusion contain a use-after-free vulnerability in the
+  XHCI USB controller. A malicious actor with local administrative privileges on a
+  virtual machine may exploit this issue to execute code as the virtual machine's
+  VMX process running on the host.
+- []
+- Pending
+CVE-2021-22041:
+- ''
+- VMware ESXi, Workstation, and Fusion contain a double-fetch vulnerability in the
+  UHCI USB controller. A malicious actor with local administrative privileges on a
+  virtual machine may exploit this issue to execute code as the virtual machine's
+  VMX process running on the host.
+- []
+- Pending
+CVE-2021-22042:
+- ''
+- VMware ESXi contains an unauthorized access vulnerability due to VMX having access
+  to settingsd authorization tickets. A malicious actor with privileges within the
+  VMX process only, may be able to access settingsd service running as a high privileged
+  user.
+- []
+- Pending
+CVE-2021-22043:
+- ''
+- VMware ESXi contains a TOCTOU (Time-of-check Time-of-use) vulnerability that exists
+  in the way temporary files are handled. A malicious actor with access to settingsd,
+  may exploit this issue to escalate their privileges by writing arbitrary files.
+- []
+- Pending
+CVE-2021-22050:
+- ''
+- ESXi contains a slow HTTP POST denial-of-service vulnerability in rhttpproxy. A
+  malicious actor with network access to ESXi may exploit this issue to create a denial-of-service
+  condition by overwhelming rhttpproxy service with multiple requests.
+- []
+- Pending
+CVE-2021-40539:
+- ''
+- Zoho ManageEngine ADSelfService Plus version 6113 and prior is vulnerable to REST
+  API authentication bypass with resultant remote code execution.
+- - products:
+    - product: Manageengine Adselfservice Plus
+      versions:
+      - '4.5'
+      - '5.0'
+      - 5.0.6
+      - '5.1'
+      - '5.2'
+      - '5.3'
+      - '5.4'
+      - '5.5'
+      - '5.6'
+      - '5.7'
+      - '5.8'
+      - '6.0'
+      - '6.1'
+    vendor: Zohocorp
+- 9.8
+CVE-2021-44521:
+- ''
+- 'When running Apache Cassandra with the following configuration: enable_user_defined_functions:
+  true enable_scripted_user_defined_functions: true enable_user_defined_functions_threads:
+  false it is possible for an attacker to execute arbitrary code on the host. The
+  attacker would need to have enough permissions to create user defined functions
+  in the cluster to be able to exploit this. Note that this configuration is documented
+  as unsafe, and will continue to be considered unsafe after this CVE.'
+- []
+- Pending
+CVE-2021-46388:
+- ''
+- WAGO 750-8212 PFC200 G2 2ETH RS Firmware version 03.05.10(17) is affected by a privilege
+  escalation vulnerability. Improper handling of user cookies leads to escalating
+  privileges to administrative account of the router.
+- []
+- Pending
+CVE-2022-0609:
 - ''
 - Pending
+- []
 - Pending
-CVE-2021-43798:
+CVE-2022-22945:
 - ''
-- 'Grafana is an open-source platform for monitoring and observability. Grafana versions
-  8.0.0-beta1 through 8.3.0 (except for patched versions) iss vulnerable to directory
-  traversal, allowing access to local files. The vulnerable URL path is: `<grafana_host_url>/public/plugins//`,
-  where is the plugin ID for any installed plugin. At no time has Grafana Cloud been
-  vulnerable. Users are advised to upgrade to patched versions 8.0.7, 8.1.8, 8.2.7,
-  or 8.3.1. The GitHub Security Advisory contains more information about vulnerable
-  URL paths, mitigation, and the disclosure timeline.'
-- 7.5
-CVE-2022-0435:
-- ''
-- Pending
-- Pending
-CVE-2022-20699:
-- ''
-- 'Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345
-  Series Routers could allow an attacker to do any of the following: Execute arbitrary
-  code Elevate privileges Execute arbitrary commands Bypass authentication and authorization
-  protections Fetch and run unsigned software Cause denial of service (DoS) For more
-  information about these vulnerabilities, see the Details section of this advisory.'
-- Pending
-CVE-2022-22620:
-- ''
-- Pending
-- Pending
-CVE-2022-23772:
-- ''
-- Rat.SetString in math/big in Go before 1.16.14 and 1.17.x before 1.17.7 has an overflow
-  that can lead to Uncontrolled Memory Consumption.
-- Pending
-CVE-2022-23773:
-- ''
-- cmd/go in Go before 1.16.14 and 1.17.x before 1.17.7 can misinterpret branch names
-  that falsely appear to be version tags. This can lead to incorrect access control
-  if an actor is supposed to be able to create branches but not tags.
-- Pending
-CVE-2022-23806:
-- ''
-- Curve.IsOnCurve in crypto/elliptic in Go before 1.16.14 and 1.17.x before 1.17.7
-  can incorrectly return true in situations with a big.Int value that is not a valid
-  field element.
-- Pending
-CVE-2022-23998:
-- ''
-- Pending
+- VMware NSX Edge contains a CLI shell injection vulnerability. A malicious actor
+  with SSH access to an NSX-Edge appliance can execute arbitrary commands on the operating
+  system as root.
+- []
 - Pending
