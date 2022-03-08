@@ -18,17 +18,17 @@ def load_config(yaml_path):
 		tuple_location=config['tuple_location']
 
 		data_location=config['data_location']
-		
+		number_rows=config['number_rows']
 		pages=config['pages']
 		empty_page=config['empty_page']
 
 		report_location=config['report_location']
 		api_link=config['api_link']
 
-	return host,tuple_location,data_location,pages,empty_page,report_location,api_link
+	return host,tuple_location,data_location,number_rows,pages,empty_page,report_location,api_link
 
 
-def get_current_record(tuple_location,data_location,pages,empty_page,url,api_link):
+def get_current_record(tuple_location,data_location,number_rows,pages,empty_page,url,api_link):
 	page=1
 	all_res=''
 	records={}
@@ -71,7 +71,7 @@ def get_current_record(tuple_location,data_location,pages,empty_page,url,api_lin
 			data_on_1_line[data_list[0]]=data_list[1:]
 			records.update(data_on_1_line)
 
-	return records
+	return dict(list(records.items())[:number_rows])
 
 def get_old_record(location):
 	try:
@@ -101,9 +101,9 @@ def format_message(host,dictionary):
 if __name__ == '__main__':
 	urls = load_urls('resources/links.yaml')
 	for url in urls:
-		host,tuple_location,data_location,pages,empty_page,report_location,api_link=load_config(urls[url])	
+		host,tuple_location,data_location,number_rows,pages,empty_page,report_location,api_link=load_config(urls[url])	
 		old_record=get_old_record(report_location)
-		current_record=get_current_record(tuple_location,data_location,pages,empty_page,url,api_link)
+		current_record=get_current_record(tuple_location,data_location,number_rows,pages,empty_page,url,api_link)
 		diff = { index : current_record[index] for index in set(current_record) - set(old_record) }
 
 		if(len(diff)!=0):

@@ -6,6 +6,7 @@ data_location:
   description: 'description'
   service: 'vendors'
   score: 'cvssv3_base_score'
+number_rows: 5
 pages: ''
 empty_page: ''
 report_location: 'reports/cvetrends_report.yaml'

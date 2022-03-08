@@ -3,6 +3,7 @@ tuple_location: '"pull_request"(.+?)</a>'
 data_location:
   name_location: '">(.*)'
   link_location: 'href="(.*)"'
+number_rows: 10
 pages: '?page='
 empty_page: 'any open pull requests.'
 report_location: 'reports/github_report.yaml'

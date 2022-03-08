@@ -3,6 +3,7 @@ tuple_location: '<td><a(.+?)</a>'
 data_location:
   name_location: '">(.*)'
   link_location: 'href="(.*)"'
+number_rows: 10
 pages: ''
 empty_page: ''
 report_location: 'reports/wordpress_report.yaml'

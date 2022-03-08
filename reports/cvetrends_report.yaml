@@ -1,103 +1,73 @@
-CVE-2021-22040:
+CVE-2016-5195:
 - ''
-- VMware ESXi, Workstation, and Fusion contain a use-after-free vulnerability in the
-  XHCI USB controller. A malicious actor with local administrative privileges on a
-  virtual machine may exploit this issue to execute code as the virtual machine's
-  VMX process running on the host.
-- []
-- Pending
-CVE-2021-22041:
-- ''
-- VMware ESXi, Workstation, and Fusion contain a double-fetch vulnerability in the
-  UHCI USB controller. A malicious actor with local administrative privileges on a
-  virtual machine may exploit this issue to execute code as the virtual machine's
-  VMX process running on the host.
-- []
-- Pending
-CVE-2021-22042:
-- ''
-- VMware ESXi contains an unauthorized access vulnerability due to VMX having access
-  to settingsd authorization tickets. A malicious actor with privileges within the
-  VMX process only, may be able to access settingsd service running as a high privileged
-  user.
-- []
-- Pending
-CVE-2021-22043:
-- ''
-- VMware ESXi contains a TOCTOU (Time-of-check Time-of-use) vulnerability that exists
-  in the way temporary files are handled. A malicious actor with access to settingsd,
-  may exploit this issue to escalate their privileges by writing arbitrary files.
-- []
-- Pending
-CVE-2021-22050:
-- ''
-- ESXi contains a slow HTTP POST denial-of-service vulnerability in rhttpproxy. A
-  malicious actor with network access to ESXi may exploit this issue to create a denial-of-service
-  condition by overwhelming rhttpproxy service with multiple requests.
-- []
-- Pending
-CVE-2021-40539:
-- ''
-- Zoho ManageEngine ADSelfService Plus version 6113 and prior is vulnerable to REST
-  API authentication bypass with resultant remote code execution.
+- Race condition in mm/gup.c in the Linux kernel 2.x through 4.x before 4.8.3 allows
+  local users to gain privileges by leveraging incorrect handling of a copy-on-write
+  (COW) feature to write to a read-only memory mapping, as exploited in the wild in
+  October 2016, aka "Dirty COW."
 - - products:
-    - product: Manageengine Adselfservice Plus
+    - product: Ubuntu Linux
       versions:
-      - '4.5'
-      - '5.0'
-      - 5.0.6
-      - '5.1'
-      - '5.2'
-      - '5.3'
-      - '5.4'
-      - '5.5'
-      - '5.6'
-      - '5.7'
-      - '5.8'
-      - '6.0'
-      - '6.1'
-    vendor: Zohocorp
-- 9.8
-CVE-2021-44521:
+      - '16.04'
+    vendor: Canonical
+  - products:
+    - product: Linux Kernel
+      versions:
+      - '*'
+    vendor: Linux
+  - products:
+    - product: Enterprise Linux Aus
+      versions:
+      - '6.5'
+    vendor: Redhat
+  - products:
+    - product: Debian Linux
+      versions:
+      - '7.0'
+      - '8.0'
+    vendor: Debian
+- 7.8
+CVE-2021-4034:
 - ''
-- 'When running Apache Cassandra with the following configuration: enable_user_defined_functions:
-  true enable_scripted_user_defined_functions: true enable_user_defined_functions_threads:
-  false it is possible for an attacker to execute arbitrary code on the host. The
-  attacker would need to have enough permissions to create user defined functions
-  in the cluster to be able to exploit this. Note that this configuration is documented
-  as unsafe, and will continue to be considered unsafe after this CVE.'
-- []
-- Pending
-CVE-2022-0609:
-- ''
-- Pending
-- []
-- Pending
-CVE-2022-22536:
-- ''
-- SAP NetWeaver Application Server ABAP, SAP NetWeaver Application Server Java, ABAP
-  Platform, SAP Content Server 7.53 and SAP Web Dispatcher are vulnerable for request
-  smuggling and request concatenation. An unauthenticated attacker can prepend a victim's
-  request with arbitrary data. This way, the attacker can execute functions impersonating
-  the victim or poison intermediary Web caches. A successful attack could result in
-  complete compromise of Confidentiality, Integrity and Availability of the system.
+- A local privilege escalation vulnerability was found on polkit's pkexec utility.
+  The pkexec application is a setuid tool designed to allow unprivileged users to
+  run commands as privileged users according predefined policies. The current version
+  of pkexec doesn't handle the calling parameters count correctly and ends trying
+  to execute environment variables as commands. An attacker can leverage this by crafting
+  environment variables in such a way it'll induce pkexec to execute arbitrary code.
+  When successfully executed the attack can cause a local privilege escalation given
+  unprivileged users administrative rights on the target machine.
 - - products:
-    - product: Web Dispatcher
+    - product: Polkit
       versions:
-      - 7.22ext
-      - '7.49'
-      - '7.53'
-      - '7.77'
-      - '7.81'
-      - '7.85'
-      - '7.86'
-      - '7.87'
-    vendor: Sap
-- 10.0
-CVE-2022-22945:
+      - '*'
+    vendor: Polkit Project
+  - products:
+    - product: Enterprise Linux Workstation
+      versions:
+      - '7.0'
+    vendor: Redhat
+  - products:
+    - product: Ubuntu Linux
+      versions:
+      - '14.04'
+      - '16.04'
+      - '18.04'
+      - '20.04'
+      - '21.10'
+    vendor: Canonical
+- 7.8
+CVE-2022-0847:
 - ''
-- VMware NSX Edge contains a CLI shell injection vulnerability. A malicious actor
-  with SSH access to an NSX-Edge appliance can execute arbitrary commands on the operating
-  system as root.
+- Pending
+- []
+- Pending
+CVE-2022-26485:
+- ''
+- Pending
+- []
+- Pending
+CVE-2022-26486:
+- ''
+- Pending
 - []
 - Pending

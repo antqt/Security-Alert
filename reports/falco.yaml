@@ -1,64 +1,20 @@
-Add ECR repository to rules:
-- /falcosecurity/falco/commit/65969c30f9fe0c0c44ed69a863c9104a07736db7
-Add curl macro:
-- /falcosecurity/falco/commit/851033c5f4753a84f5d6866d80a14dea3c6f1d24
-Add more curl download checks:
-- /falcosecurity/falco/commit/749d4b45126e95c9953c3f3ab26aa81982b82b54
-Add wget and curl to remote_file_copy_binaries:
-- /falcosecurity/falco/commit/d434853d5fab6f0eb8379ab1b385058fa6ae34b2
-Added new Rule Polkit Local Privilege Escalation Vulnerability (:
-- /falcosecurity/falco/commit/1324522721d28149133e7b6bfabe9f7b5eb2c881
-Fix bug in macro that was masked by old evttype checking:
-- /falcosecurity/falco/commit/3b390793b999d9774dc3ce5144eb8a71ac6a7e0e
-Fix remove scp and add curl:
-- /falcosecurity/falco/commit/c4d25b1d2469f5c6cd980948b4faf80366e4fa1e
-Fix syntax error:
-- /falcosecurity/falco/commit/66df790b9d0e74b90726e783ca3fdf2eb0482d78
 Fixed rule condition:
 - /falcosecurity/falco/commit/ae5342c54b2a5698a8ee66d3e53327bbbac07db4
-Move user_known_ingress_remote_file_copy_activities to outside condition:
-- /falcosecurity/falco/commit/b0565794f5a57efde8a8cc1a8d7a231cf96306c1
-Move wget and curl to own rule:
-- /falcosecurity/falco/commit/af6f3bfeab8ac7d5ac25c533d04e564f93c85a95
-Remove duplicate allowed ecr registry rule:
-- /falcosecurity/falco/commit/e0f8b816924a1b39040418d37f9605e1712355a2
-Rule Update - Adds npm support:
-- /falcosecurity/falco/commit/7999e33aea63c9664d5aa55c8eb6acdeba560962
 Update rules/falco_rules.yaml:
 - /falcosecurity/falco/commit/b9925577ef1e43ad770fa593a91bd3e98c033310
-'chore: renaming comment references':
-- /falcosecurity/falco/commit/85db078dc40c42a518ccae62635eef6c9894ce61
-"fix(macro modify_shell_history): avoid false positives from .zsh_hist\u2026":
-- /falcosecurity/falco/commit/6ead925f51ab4fc593825698b01a58b9b308db24
-"fix(macro truncate_shell_history): avoid false positives from .zsh_hi\u2026":
-- /falcosecurity/falco/commit/9e8687401d05f844db96b409e66b9ab6179c8807
-'fix(rules): typo in Create Symlink Over Sensitive Files rule output':
-- /falcosecurity/falco/commit/f035829ca2881b70a4d13e22abb5f8eb828d3a5f
-'new(rules): Create Hardlink Over Sensitive Files':
-- /falcosecurity/falco/commit/d989e9c2d54a349b20f950c42a98fde27aa2c32c
-re-add double empty newline:
-- /falcosecurity/falco/commit/cd471a78dbddbd4ca34ce6bbe43be38281cae471
-'refactor: remove apt-config from debian_packages monitoring':
-- /falcosecurity/falco/commit/18c7b6500d82f3db7e0eeae2e44fa2e80e136455
-"rule update(Detect crypto miners using the Stratum protocol): update \u2026":
-- /falcosecurity/falco/commit/fdcd7bffd0a8e8412013d5089a8e47f09c46f45a
-"rule update(Sudo Potential Privilege Escalation): trigger the most co\u2026":
-- /falcosecurity/falco/commit/6b9fafb75f4a7f3641f64770deb3fb6bca73d85d
-"rule(maco write_etc_common): Fix false-positive of sssd updating /etc\u2026":
-- /falcosecurity/falco/commit/8a3a4c4d57d65e0cd8049d37aba9902e08b11967
-'rule(macro modify_shell_history): Fix missing s on endswith':
-- /falcosecurity/falco/commit/f49a95f3349de15dcf9b43bd3a60ccfabb081838
-'rule: add execveat as evt.type for spawned_process macro in falco rules':
-- /falcosecurity/falco/commit/8c705448cc70b1632bc51fc684cab6a13468ac79
-'rule: update Copyright in falco rules':
-- /falcosecurity/falco/commit/7750b6f209fdef7b709e22ee4325797dd01949ba
-'rules(list https_miner_domains): fix typo in the list':
-- /falcosecurity/falco/commit/874809351f79293c3800e5b8a49e363b575b7d14
-'rules: adding support to openat2':
-- /falcosecurity/falco/commit/2a00a4d8530102c2fb07c295fa6b3df1266244fe
-'update(rules): Add containerd socket to sensitive_mount macro':
-- /falcosecurity/falco/commit/6319be81468386227c8cc6c85bc96a154a2cc499
-'update(rules): remove falco_hostnetwork_images list (unused)':
-- /falcosecurity/falco/commit/3640871725c802ffd23730e7ef5ec11f9c90a0c4
+'spelling:':
+- /falcosecurity/falco/commit/53c77ea6b5f6370de5cf5048df5bf827ef72577a
+'spelling: allowed':
+- /falcosecurity/falco/commit/a84adbd2313284f0cfb9168c1f7bb244a660f5d6
+'spelling: altogether':
+- /falcosecurity/falco/commit/eabd3ad24b5cdf2dbe8b6a2cb874be3bce88a0ba
+'spelling: command lines':
+- /falcosecurity/falco/commit/fa7fab525fef334a2746652c487b1aecd763ebb3
+'spelling: hierarchy':
+- /falcosecurity/falco/commit/1306fd6ac1e1e39a1ee7d4e71499766725ed2189
+'spelling: privileged':
+- /falcosecurity/falco/commit/9a314d9443ca4c7945705473992d1febc3f7d5d4
+'spelling: themselves':
+- /falcosecurity/falco/commit/e8aac3189097b4b16216833e1cef3635eac7eb69
 upgrade macro(keepalived_writing_conf):
 - /falcosecurity/falco/commit/87c410e49e3b356d6220d31d2708444bdfb176f8
