@@ -47,7 +47,7 @@ tuple_location: '"pull_request"(.*)</a>' #Between red boxs
 link_location: 'href="(.*)"' #Between yellow boxs
 name_location: '">(.*)' #Between green boxs
 pages: '?page=' #In cyan box
-empty_page: 'reports/github_report.yaml' #string in 404 page
+empty_page: 'There aren’t any open pull requests.' #string in 404 page
 report_location: 'reports/github_report.yaml' #location to save record
 ```
 
